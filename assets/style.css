@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.buttonstyle {
+    text-decoration: none;
+    background-color: purple;
+    border-radius: .5rem;
+    color: white;
+}
+
+.buttonstyle:hover{
+    opacity: 70%;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+#header{
+    padding-top: 15rem;
+    display: flex;
+    justify-content: center;
+}
+
+#subtext{
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#button-placement{
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
