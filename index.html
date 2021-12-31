@@ -8,10 +8,10 @@
     <link rel = "reset" href = "./assets/reset.css">
     <link rel = "stylesheet" href = "./assets/style.css">
 </head>
-<body>
+<body id = "body">
     <nav id = "navbar">
         <a href = "./highscores.html">View Highscores</a>
-        <div id = "countdown">Timer=</div>
+        <div id = "countdown">Timer = 75</div>
     </nav>
     <div id = "main-content">
         <header id = "header">
@@ -23,8 +23,29 @@
             </p>
         </div>
         <div id ="button-placement">
-            <button class = "buttonstyle buttons">Start Quiz</button>
+            <button id = "start-button" class = "buttonstyle buttons">Start Quiz</button>
         </div>
+    </div>
+    <div id = "question-container" style = "display: none">
+        <h1 id = "question-title"></h1>
+        <div id = "button-master">
+            <button class = "buttonstyle" id = "button1"></button>
+            <button class = "buttonstyle" id = "button2"></button>
+            <button class = "buttonstyle" id = "button3"></button>
+            <button class = "buttonstyle" id = "button4"></button>
+        </div>
+        <div id = "check-box" style = "display: none;">
+            <p id = "check" style = "display: none;"></p>
+        </div>
+    </div>
+    <div id = "game-over" style = "display: none;">
+        <h1 id = "all-done" >All Done!</h1>
+        <p id = "final-score"></p>
+        <form id = "submit-name" >
+            <label for ="initials">Enter Initials: </label>
+            <input type="text" id="initials" name = "initials" value ="">
+            <input type = "submit" value = "submit">
+        </form>
     </div>
     <script src ="./assets/script.js"></script>
 </body>

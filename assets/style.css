@@ -9,6 +9,7 @@
     background-color: purple;
     border-radius: .5rem;
     color: white;
+    margin: 1rem;
 }
 
 .buttonstyle:hover{
@@ -38,3 +39,34 @@
     display: flex;
     justify-content: center;
 }
+
+#question-title{
+    display: flex;
+    justify-content: center;
+
+}
+
+#button-master{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#check-box{
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid purple;
+}
+
+#game-over{
+    display: flex;
+}
+
+#all-done{
+    justify-content: center;
+}
+
+/* Style Highscore page */
+
