@@ -1,3 +1,5 @@
+//Global Variables
+
 var startGame = document.getElementById("start-button");
 var timeleft = 75;
 var startPage = document.getElementById("main-content");
@@ -12,116 +14,136 @@ var check = document.getElementById("check");
 var checkBox = document.getElementById("check-box");
 var gameOver = document.getElementById("game-over");
 var finalScore = document.getElementById("final-score");
-var questionIndex = 0;
-// var finalTime = timeleft
-const questions = [
-    {
-        question: "What color is the sky?",
-        choices: ["1. blue","2. brown", "3. green", "4. salmon"],
-        answer: "1. blue"
-    },
-    {
-        question: "What color is grass?",
-        choices: ["1. chartruse", "2. rain", "3. lint", "4. grass"],
-        answer: "3. lint"
-    },
-    {
-        question: "How stinky is stinky cheese?",
-        choices: ["1. very stinky", "2. not that stinky", "3. stinky", "4. peeee-yeeww"],
-        answer: "3. stinky"
-    },
-    {
-        question: "Diddly do da?",
-        choices: ["1. diddly day", "2. hey diddle diddle", "3. doodly", "4. hoohaa"],
-        answer: "1. diddly day"
-    }
+var questionArray = 0;
+var timeInterval;
 
+//questions container
+
+const questions = [
+  {
+    question: "What color is the sky?",
+    choices: ["1. blue", "2. brown", "3. green", "4. salmon"],
+    answer: "1. blue",
+  },
+  {
+    question: "What color is grass?",
+    choices: ["1. chartruse", "2. rain", "3. lint", "4. grass"],
+    answer: "3. lint",
+  },
+  {
+    question: "How stinky is stinky cheese?",
+    choices: [
+      "1. very stinky",
+      "2. not that stinky",
+      "3. stinky",
+      "4. peeee-yeeww",
+    ],
+    answer: "3. stinky",
+  },
+  {
+    question: "Diddly do da?",
+    choices: [
+      "1. diddly day",
+      "2. hey diddle diddle",
+      "3. doodly",
+      "4. hoohaa",
+    ],
+    answer: "1. diddly day",
+  },
 ];
 
-startGame.addEventListener("click", function(){
-    
-    var timerEl = document.getElementById("countdown");
-    startPage.style.display = "none";
-    questionContainer.style.display = "block";
+//Starting the timer and the game. Clicking on start game populates the first question.
 
+startGame.addEventListener("click", function () {
+  var timerEl = document.getElementById("countdown");
+  startPage.style.display = "none";
+  questionContainer.style.display = "block";
 
+  //Timer function
 
-    function countdown() {
-        var timeInterval = setInterval(function () {
-            timeleft--;
-            timerEl.textContent = "Timer = " + timeleft;
+  function countdown() {
+    timeInterval = setInterval(timer, 1000);
 
-            if(timeleft <= 0){
-            clearInterval(timeInterval); 
-            }
+    function timer() {
+      timeleft -= 1;
+      timerEl.textContent = "Timer = " + timeleft;
 
-        }, 1000);
-        };
+      if (timeleft <= 0) {
+        clearInterval(timeInterval);
+      }
+    }
+  }
 
-        countdown();
-        nextQuestion();
-
-
+  countdown();
+  nextQuestion();
 });
 
+//Populating the next question in the array.
 
 function nextQuestion() {
-    questionTitle.textContent = questions[questionIndex].question;
-    choice1.textContent = questions[questionIndex].choices[0];
-    choice2.textContent = questions[questionIndex].choices[1];
-    choice3.textContent = questions[questionIndex].choices[2];
-    choice4.textContent = questions[questionIndex].choices[3];
+  questionTitle.textContent = questions[questionArray].question;
+  choice1.textContent = questions[questionArray].choices[0];
+  choice2.textContent = questions[questionArray].choices[1];
+  choice3.textContent = questions[questionArray].choices[2];
+  choice4.textContent = questions[questionArray].choices[3];
 }
 
+//Checking if answer is right.
+
 function checkAnswer(answer) {
-    
-    check.style.display= "block";
-    checkBox.style.display= "";
-    
-    // console.log(button1)
+  check.style.display = "block";
+  checkBox.style.display = "";
 
-    if (questions[questionIndex].answer === questions[questionIndex].choices[answer]) {
-        check.textContent = "correct";
-    }
+  if (
+    questions[questionArray].answer === questions[questionArray].choices[answer]
+  ) {
+    check.textContent = "correct";
+  } else {
+    check.textContent = "wronggg";
+    timeleft -= 10;
+  }
 
-    else{
-        check.textContent = "wronggg";
-        timeleft -= 30;
-    };
+//Checking if next question is the last question, if so, ending function executes.
 
-    questionIndex++;
+  questionArray++;
 
-    if (questionIndex < questions.length) {
-        nextQuestion ();
-    } else {
-        ending();
-        }
-    
-};
+  if (questionArray < questions.length) {
+    nextQuestion();
+  } else {
+    ending();
+  }
+}
 
+//Checking if click is correct answer.
 
-function option1() {checkAnswer (0)};
-function option2() {checkAnswer (1)};
-function option3() {checkAnswer (2)};
-function option4() {checkAnswer (3)};
+function option1() {
+  checkAnswer(0);
+}
+function option2() {
+  checkAnswer(1);
+}
+function option3() {
+  checkAnswer(2);
+}
+function option4() {
+  checkAnswer(3);
+}
+
+//Adding event listeners to each choice's button.
 
 choice1.addEventListener("click", option1);
 choice2.addEventListener("click", option2);
 choice3.addEventListener("click", option3);
 choice4.addEventListener("click", option4);
 
+//Once final question is answered, this function executes.
 
-function ending(){
-    var finalTime = timeleft
-    questionContainer.style.display = "none";
-    gameOver.style.display = "";
-    finalScore.textContent = "Your final score is " + finalTime + "!";
-    // if(timeleft === finalTime){
-    //     clearInterval()
-    // }
-    //TODO: stop the timer!!!!
+function ending() {
+  questionContainer.style.display = "none";
+  gameOver.style.display = "";
+  finalScore.textContent = "Your final score is " + timeleft + "!";
+  clearInterval(timeInterval);
 }
 
-//TODO: No negative timer
 //TODO: Store scores
 //TODO: Clear Highscores
