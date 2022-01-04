@@ -16,6 +16,11 @@
     opacity: 70%;
 }
 
+#highscore-nav{
+    text-decoration: none;
+    color: black;
+}
+
 #navbar{
     display: flex;
     justify-content: space-between;
@@ -28,13 +33,7 @@
     justify-content: center;
 }
 
-#subtext{
-    padding-top: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-#button-placement{
+#subtext, #button-placement{
     padding-top: 1rem;
     display: flex;
     justify-content: center;
@@ -60,13 +59,10 @@
     border-top: 2px solid purple;
 }
 
-#game-over{
+#all-done, #final-score, #score-form{
     display: flex;
-}
-
-#all-done{
     justify-content: center;
+    padding-top: 1.5rem;
 }
 
-/* Style Highscore page */
 

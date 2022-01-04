@@ -14,10 +14,15 @@ var check = document.getElementById("check");
 var checkBox = document.getElementById("check-box");
 var gameOver = document.getElementById("game-over");
 var finalScore = document.getElementById("final-score");
+var submitBtn = document.querySelector("#submit");
+var initialsInput = document.querySelector("#initial");
+var highScoreList = document.querySelector("#highscores-list");
+var scoreReset = document.querySelector("#reset-score");
 var questionArray = 0;
 var timeInterval;
 
 //questions container
+
 
 const questions = [
   {
@@ -146,4 +151,35 @@ function ending() {
 }
 
 //TODO: Store scores
+function highscoresStore(event){
+  event.preventDefault();
+
+  var savedHighscores = localStorage.getItem("highscore");
+  var scoresArray = [];
+
+  if (savedHighscores === null){
+    scoresArray = []
+  } else {
+    scoresArray = JSON.parse(savedHighscores)
+  }
+  var initialsSub = {
+    initials: initialsInput.value,
+    final: timeleft
+  };
+  scoresArray.push(initialsSub);
+  var scoresArraystring = JSON.stringify(scoresArray);
+
+  localStorage.setItem("highscore", scoresArraystring)
+
+}
+
+submitBtn.addEventListener("click", function(event){
+  highscoresStore(event);
+  window.location = "./highscores.html"
+});
+
+//TODO: Save the arrays as uniqe objects, can't be overwritten
+
+//TODO: Populate highscores on the highscores page
+
 //TODO: Clear Highscores

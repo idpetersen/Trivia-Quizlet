@@ -10,7 +10,7 @@
 </head>
 <body id = "body">
     <nav id = "navbar">
-        <a href = "./highscores.html">View Highscores</a>
+        <a id = "highscore-nav" href = "./highscores.html">View Highscores</a>
         <div id = "countdown">Timer = 75</div>
     </nav>
     <div id = "main-content">
@@ -40,14 +40,20 @@
     </div>
     <div id = "game-over" style = "display: none;">
         <h1 id = "all-done" >All Done!</h1>
-        <p id = "final-score"></p>
-        <form id = "submit-name" >
-            <label for ="initials">Enter Initials: </label>
-            <input type="text" id="initials" name = "initials" value ="">
-            <input type = "submit" value = "submit">
-        </form>
+        <div>
+            <p id = "final-score"></p>
+        </div>
+        <div id = "score-form">
+            <form id = "submit-name" >
+                <label for ="initialsd">Enter Initials: </label>
+                <input type="text" id="initial" name = "initials" placeholder="E.X. IDP">
+                <button id = "submit" >Submit</button>
+            </form>
+        </div>
     </div>
     <script src ="./assets/script.js"></script>
 </body>
 </html>
 
+
+<!-- onclick="location.href='./highscores.html';" value = "go to highscores page" -->
