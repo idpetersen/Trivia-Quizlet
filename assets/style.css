@@ -19,6 +19,7 @@
 #highscore-nav{
     text-decoration: none;
     color: black;
+    
 }
 
 #navbar{
@@ -65,4 +66,12 @@
     padding-top: 1.5rem;
 }
 
+#highscores-list{
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
 
+.hide{
+    display: none;
+}

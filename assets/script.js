@@ -18,6 +18,8 @@ var submitBtn = document.querySelector("#submit");
 var initialsInput = document.querySelector("#initial");
 var highScoreList = document.querySelector("#highscores-list");
 var scoreReset = document.querySelector("#reset-score");
+var highScoreBtn = document.querySelector("#highscore-nav");
+var timer = document.getElementById("#countdown");
 var questionArray = 0;
 var timeInterval;
 
@@ -58,8 +60,9 @@ const questions = [
 ];
 
 //Starting the timer and the game. Clicking on start game populates the first question.
-
+function init () {
 startGame.addEventListener("click", function () {
+  // var timeleft = 75;
   var timerEl = document.getElementById("countdown");
   startPage.style.display = "none";
   questionContainer.style.display = "block";
@@ -149,8 +152,8 @@ function ending() {
   finalScore.textContent = "Your final score is " + timeleft + "!";
   clearInterval(timeInterval);
 }
-
-//TODO: Store scores
+}
+//Storing Highscores into local storage.
 function highscoresStore(event){
   event.preventDefault();
 
@@ -173,13 +176,59 @@ function highscoresStore(event){
 
 }
 
+//Once submit button has been clicked, show highscores page
 submitBtn.addEventListener("click", function(event){
   highscoresStore(event);
-  window.location = "./highscores.html"
+  highScorePage.classList.remove("hide")
+  gameOver.style.display = "none"
+
+  showHighScores();
 });
 
-//TODO: Save the arrays as uniqe objects, can't be overwritten
 
+var highscoresList = document.querySelector("#highscores-list")
+var i = 0;
+function showHighScores() {
+
+
+    var savedHighScores = localStorage.getItem("highscore");
+
+    // check if there is any in local storage
+    if (savedHighScores === null) {
+        return;
+    }
+    console.log(savedHighScores);
+
+    var storedHighScores = JSON.parse(savedHighScores);
+
+    for (; i < storedHighScores.length; i++) {
+        var eachNewHighScore = document.createElement("li");
+        eachNewHighScore.innerHTML = storedHighScores[i].initials + ": " + storedHighScores[i].score;
+        highscoresList.appendChild(eachNewHighScore);
+    }
+}
+
+var highScorePage = document.querySelector(".highscores-page");
+
+highScoreBtn.addEventListener("click", function () {
+  questionContainer.style.display = "none"
+  startPage.style.display = "none";
+  highScorePage.classList.remove("hide");
+  showHighScores()
+})
+
+var returnHome = document.querySelector("#return-home")
+
+returnHome.addEventListener("click", function(){
+  highScorePage.classList.add("hide");
+  startPage.style.display = "block"
+})
+
+init()
 //TODO: Populate highscores on the highscores page
 
 //TODO: Clear Highscores
+scoreReset.addEventListener("click", function(){
+  window.localStorage.removeItem("highscore")
+  highScoreList.innerHTML = ""
+})
