@@ -18,7 +18,7 @@ var submitBtn = document.querySelector("#submit");
 var initialsInput = document.querySelector("#initial");
 var highScoreList = document.querySelector("#highscores-list");
 var scoreReset = document.querySelector("#reset-score");
-var highScoreBtn = document.querySelector("#highscore-nav");
+var highScoreBtn = document.querySelector(".highscore-nav");
 var timer = document.getElementById("#countdown");
 var questionArray = 0;
 var timeInterval;
@@ -65,6 +65,7 @@ function init() {
     var timerEl = document.getElementById("countdown");
     startPage.style.display = "none";
     questionContainer.style.display = "block";
+    highScoreBtn.classList.add("hide");
 
     //Timer function
 
@@ -224,6 +225,7 @@ var returnHome = document.querySelector("#return-home");
 returnHome.addEventListener("click", function () {
   highScorePage.classList.add("hide");
   startPage.style.display = "block";
+  highScoreBtn.classList.remove("hide")
 });
 
 init();
