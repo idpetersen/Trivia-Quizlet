@@ -206,6 +206,10 @@ function showHighScores() {
         eachNewHighScore.innerHTML = storedHighScores[i].initials + ": " + storedHighScores[i].score;
         highscoresList.appendChild(eachNewHighScore);
     }
+    questionArray = 0
+    timeleft = 75
+    checkBox.style.display = "none"
+    // console.log(storedHighScores)
 }
 
 var highScorePage = document.querySelector(".highscores-page");
@@ -213,15 +217,16 @@ var highScorePage = document.querySelector(".highscores-page");
 highScoreBtn.addEventListener("click", function () {
   questionContainer.style.display = "none"
   startPage.style.display = "none";
+  gameOver.style.display = "none";
   highScorePage.classList.remove("hide");
-  showHighScores()
+  showHighScores();
 })
 
 var returnHome = document.querySelector("#return-home")
 
 returnHome.addEventListener("click", function(){
   highScorePage.classList.add("hide");
-  startPage.style.display = "block"
+  startPage.style.display = "block";
 })
 
 init()
