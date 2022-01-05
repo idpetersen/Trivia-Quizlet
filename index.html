@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding Quiz</title>
-    <link rel = "reset" href = "./assets/reset.css">
-    <link rel = "stylesheet" href = "./assets/style.css">
-</head>
-<body id = "body">
-    <nav id = "navbar">
-        <button id = "highscore-nav">View Highscores</button>
-        <div id = "countdown">Timer = 75</div>
+    <link rel="reset" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body id="body">
+    <nav id="navbar">
+      <button id="highscore-nav">View Highscores</button>
+      <div id="countdown">Timer = 75</div>
     </nav>
-    <div id = "main-content">
-        <header id = "header">
-            <h1>Coding Quiz Challenge</h1>
-        </header>
-        <div id = "subtext">
-            <p>
-                Test your skills with this super hard quiz.
-            </p>
-        </div>
-        <div id ="button-placement">
-            <button id = "start-button" class = "buttonstyle buttons">Start Quiz</button>
-        </div>
+    <div id="main-content">
+      <header id="header">
+        <h1>Coding Quiz Challenge</h1>
+      </header>
+      <div id="subtext">
+        <p>Test your skills with this super hard quiz.</p>
+      </div>
+      <div id="button-placement">
+        <button id="start-button" class="buttonstyle buttons">
+          Start Quiz
+        </button>
+      </div>
     </div>
-    <div id = "question-container" style = "display: none">
-        <h1 id = "question-title"></h1>
-        <div id = "button-master">
-            <button class = "buttonstyle" id = "button1"></button>
-            <button class = "buttonstyle" id = "button2"></button>
-            <button class = "buttonstyle" id = "button3"></button>
-            <button class = "buttonstyle" id = "button4"></button>
-        </div>
-        <div id = "check-box" style = "display: none">
-            <p id = "check" style = "display: none"></p>
-        </div>
+    <div id="question-container" style="display: none">
+      <h1 id="question-title"></h1>
+      <div id="button-master">
+        <button class="buttonstyle" id="button1"></button>
+        <button class="buttonstyle" id="button2"></button>
+        <button class="buttonstyle" id="button3"></button>
+        <button class="buttonstyle" id="button4"></button>
+      </div>
+      <div id="check-box" style="display: none">
+        <p id="check" style="display: none"></p>
+      </div>
     </div>
-    <div id = "game-over" style = "display: none">
-        <h1 id = "all-done" >All Done!</h1>
-        <div>
-            <p id = "final-score"></p>
-        </div>
-        <div id = "score-form">
-            <form id = "submit-name" >
-                <label for ="initialsd">Enter Initials: </label>
-                <input type="text" id="initial" name = "initials" placeholder="E.X. IDP">
-                <button id = "submit" >Submit</button>
-            </form>
-        </div>
+    <div id="game-over" style="display: none">
+      <h1 id="all-done">All Done!</h1>
+      <div>
+        <p id="final-score"></p>
+      </div>
+      <div id="score-form">
+        <form id="submit-name">
+          <label for="initialsd">Enter Initials: </label>
+          <input
+            type="text"
+            id="initial"
+            name="initials"
+            placeholder="E.X. IDP"
+          />
+          <button id="submit">Submit</button>
+        </form>
+      </div>
     </div>
-    <div class = "highscores-page hide">
-        <div id = "header">
-            <h1>Highscores page</h1>
-        </div>
-        <div id = "highscores-list">
-        </div>
-        <div id = "button-placement">
-            <button id = "return-home" class = "button buttonstyle">Return Home</button>
-            <button id = "reset-score" class = "button buttonstyle">Reset Highscores</button>
-        </div>
+    <div class="highscores-page hide">
+      <div id="header">
+        <h1>Highscores page</h1>
+      </div>
+      <div id="highscores-list"></div>
+      <div id="button-placement">
+        <button id="return-home" class="button buttonstyle">Return Home</button>
+        <button id="reset-score" class="button buttonstyle">
+          Reset Highscores
+        </button>
+      </div>
     </div>
-    <script src ="./assets/script.js"></script>
-</body>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
-
 
 <!-- onclick="location.href='./highscores.html';" value = "go to highscores page" -->
