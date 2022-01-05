@@ -76,3 +76,8 @@
 .hide {
   display: none;
 }
+
+.list-style{
+    display: flex;
+    flex-flow: column;
+}
