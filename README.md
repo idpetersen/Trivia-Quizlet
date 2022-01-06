@@ -35,7 +35,7 @@ No license.
 
 -Link to my [GitHub](https://github.com/idpetersen)
 
--Link to my [Repository](https://github.com/idpetersen/coding-quiz)
+-Link to my [Repository](https://github.com/idpetersen/Trivia-Quizlet)
 ## Thank yous:
 
 Thank you to Sabrina, Carter, Louis and everyone else for helping me with all things coding. Could not have done it without you guys. It takes a village... 
