@@ -77,7 +77,9 @@ function init() {
         timerEl.textContent = "Timer = " + timeleft;
 
         if (timeleft <= 0) {
+          ending()
           clearInterval(timeInterval);
+          timerEl.textContent = "Out of time!!!"
         }
       }
     }
@@ -109,7 +111,7 @@ function init() {
       check.textContent = "correct";
     } else {
       check.textContent = "wronggg";
-      timeleft -= 10;
+      timeleft -= 72;
     }
 
     //Checking if next question is the last question, if so, ending function executes.
