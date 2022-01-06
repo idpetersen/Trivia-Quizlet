@@ -28,4 +28,14 @@ This is a Javascript based quiz web application.
 
 Demo of the game playing through and highscore clearing:
 
-![Playing through the game and highscore clearing](./)
+![Playing through the game and highscore clearing](./assets/photos/quizlet-demo.gif)
+
+## License:
+
+No license.
+
+## Thank yous:
+
+Thank you to Sabrina, Carter, Louis and everyone else for helping me with all things coding. Could not have done it without you guys. It takes a village... 
+
+-Isaac Petersen
