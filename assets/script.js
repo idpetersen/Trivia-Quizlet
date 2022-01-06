@@ -111,7 +111,7 @@ function init() {
       check.textContent = "correct";
     } else {
       check.textContent = "wronggg";
-      timeleft -= 72;
+      timeleft -= 45;
     }
 
     //Checking if next question is the last question, if so, ending function executes.
@@ -152,7 +152,11 @@ function init() {
   function ending() {
     questionContainer.style.display = "none";
     gameOver.style.display = "";
-    finalScore.textContent = "Your final score is " + timeleft + "!";
+    if(timeleft <= 0) {
+      timeleft = 0;
+      finalScore.textContent = "Your final score is " + timeleft + "!";
+    }
+    
     clearInterval(timeInterval);
   }
 }
