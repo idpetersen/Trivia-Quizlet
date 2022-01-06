@@ -27,34 +27,54 @@ var timeInterval;
 
 const questions = [
   {
-    question: "What color is the sky?",
-    choices: ["1. blue", "2. brown", "3. green", "4. salmon"],
-    answer: "1. blue",
+    question: "What is the biggest moon in our solar system?",
+    choices: ["1. Ganymede", "2. Titan", "3. Callisto", "4. Io"],
+    answer: "1. Ganymede",
   },
   {
-    question: "What color is grass?",
-    choices: ["1. chartruse", "2. rain", "3. lint", "4. grass"],
-    answer: "3. lint",
+    question: "What year was basketball invented?",
+    choices: ["1. 1921", "2. 1913", "3. 1891", "4. 1936"],
+    answer: "3. 1891",
   },
   {
-    question: "How stinky is stinky cheese?",
+    question: "Which of Newton's Laws states that 'for every action, there is an equal and opposite reaction?'",
     choices: [
-      "1. very stinky",
-      "2. not that stinky",
-      "3. stinky",
-      "4. peeee-yeeww",
+      "1. Law of mass and acceleration",
+      "2. Law of deceleration",
+      "3. Law of motion",
+      "4. Law of inertia",
     ],
-    answer: "3. stinky",
+    answer: "3. Law of motion",
   },
   {
-    question: "Diddly do da?",
+    question: "What is the oldest programming language still used today?",
     choices: [
-      "1. diddly day",
-      "2. hey diddle diddle",
-      "3. doodly",
-      "4. hoohaa",
+      "1. FORTRAN",
+      "2. PASCAL",
+      "3. Visual Basic",
+      "4. LOGO",
     ],
-    answer: "1. diddly day",
+    answer: "1. FORTRAN",
+  },
+  {
+    question: "What is a duel between three people called?",
+    choices: [
+      "1. A triad",
+      "2. A tricycle",
+      "3. A truel",
+      "4. A tricomb",
+    ],
+    answer: "3. A truel",
+  },
+  {
+    question: "What country crosses the most timezones",
+    choices: [
+      "1. Russia",
+      "2. The United States",
+      "3. Canada",
+      "4. India",
+    ],
+    answer: "1. Russia",
   },
 ];
 
@@ -108,9 +128,9 @@ function init() {
       questions[questionArray].answer ===
       questions[questionArray].choices[answer]
     ) {
-      check.textContent = "correct";
+      check.textContent = "Correct Answer!";
     } else {
-      check.textContent = "wronggg";
+      check.textContent = "Wrong :(";
       timeleft -= 10;
     }
 

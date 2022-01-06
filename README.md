@@ -1,2 +1,2 @@
 # coding-quiz
-Quiz Applet
+This is a Javascript based quiz web application.

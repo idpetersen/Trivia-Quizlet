@@ -33,12 +33,23 @@
   justify-content: center;
 }
 
-#subtext,
 #button-placement {
   padding-top: 1rem;
   display: flex;
   justify-content: center;
 }
+
+#subtext{
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#instructions{
+    width: 30%;
+    font-weight: bold;
+    text-align: center;
+}    
 
 #question-title {
   display: flex;
