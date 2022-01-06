@@ -36,6 +36,8 @@ No license.
 -Link to my [GitHub](https://github.com/idpetersen)
 
 -Link to my [Repository](https://github.com/idpetersen/Trivia-Quizlet)
+
+-Link to deployed game [https://idpetersen.github.io/Trivia-Quizlet/](https://idpetersen.github.io/Trivia-Quizlet/)
 ## Thank yous:
 
 Thank you to Sabrina, Carter, Louis and everyone else for helping me with all things coding. Could not have done it without you guys. It takes a village... 
