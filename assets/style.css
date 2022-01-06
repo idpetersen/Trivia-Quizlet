@@ -39,17 +39,17 @@
   justify-content: center;
 }
 
-#subtext{
-    padding-top: 1rem;
-    display: flex;
-    justify-content: center;
+#subtext {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
-#instructions{
-    width: 30%;
-    font-weight: bold;
-    text-align: center;
-}    
+#instructions {
+  width: 30%;
+  font-weight: bold;
+  text-align: center;
+}
 
 #question-title {
   display: flex;
@@ -82,9 +82,8 @@
   display: none;
 }
 
-.list-style{
-    display: grid;
-    justify-content: center;
-    padding-top: 1rem;
-
+.list-style {
+  display: grid;
+  justify-content: center;
+  padding-top: 1rem;
 }
